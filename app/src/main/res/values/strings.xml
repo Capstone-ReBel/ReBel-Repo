@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">ReBel New\'s</string>
-    <string name="julian_name">Julian Putra</string>
     <string name="txt_try">After Splash Activity</string>
+    <string name="btn_AfterSplashScA">Start</string>
+    <string name="txt_AfterSplashScA">Welcome to our new\'s site</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">MENU</string>
 </resources>
