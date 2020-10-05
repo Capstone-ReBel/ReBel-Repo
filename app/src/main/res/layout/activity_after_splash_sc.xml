@@ -4,16 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AfterSplashScA"
-    android:background="@color/colorAccent">
+    android:background="@drawable/gradaftersplashsca"
+    tools:context=".AfterSplashScA">
 
     <TextView
-        android:id="@+id/txtTry"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtWelcome"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txt_try"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="300dp"
+        android:gravity="center"
+        android:text="@string/txt_AfterSplashScA"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_aftersplashsca"
+        android:text="@string/btn_AfterSplashScA"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtWelcome"
+        android:onClick="slider" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

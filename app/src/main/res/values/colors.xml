@@ -3,4 +3,23 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="AfterSplashScA_color1">#375E97</color>
+    <color name="AfterSplashScA_color2">#FB6542</color>
+    <color name="AfterSplashScA_color3">#BCBABE</color>
+    <color name="AfterSplashScA_color4">#A1D6E2</color>
+
+    <color name="AfterSplashScA_color11">#738eb6</color>
+    <color name="AfterSplashScA_color22">#fc937a</color>
+    <color name="AfterSplashScA_color44">#bde2ea</color>
+
+    <array name="array_dot_active">
+        <item>@color/AfterSplashScA_color11</item>
+        <item>@color/AfterSplashScA_color22</item>
+        <item>@color/AfterSplashScA_color44</item>
+    </array>
+    <array name="array_dot_inactive">
+        <item>@color/AfterSplashScA_color1</item>
+        <item>@color/AfterSplashScA_color2</item>
+        <item>@color/AfterSplashScA_color4</item>
+    </array>
 </resources>
