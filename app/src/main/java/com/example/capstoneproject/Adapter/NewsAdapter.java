@@ -1,9 +1,11 @@
 package com.example.capstoneproject.Adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,14 +32,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         this.list = list;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from( parent.getContext() ).inflate( R.layout.list_news, null, false );
+        @SuppressLint("InflateParams") View v = LayoutInflater.from( parent.getContext() ).inflate( R.layout.list_news, null, false );
         RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams( ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT );
         v.setLayoutParams( layoutParams );
         return new ViewHolder( v );
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final News news = list.get( position );
@@ -45,7 +49,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.judul.setText( news.getTitleNews() );
         holder.tgl.setText( news.getDateNews().substring( 0, 10 ) + " " + news.getDateNews().substring( 11, 16 ) );
         if (news.getAuthorNews() == null) {
-            holder.penulis.setText( "Penulis Tidak Diketahui" );
+            holder.penulis.setText( R.string.txt_authorunkwn );
         } else {
             holder.penulis.setText( news.getAuthorNews() );
         }
@@ -79,7 +83,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private CardView cv;
         private ImageView gmb;
         private TextView judul, tgl, penulis;

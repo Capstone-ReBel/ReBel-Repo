@@ -64,7 +64,7 @@
                         android:text="Tanggal"
                         android:textStyle="italic"
                         android:textSize="14sp"
-                        android:gravity="right" />
+                        android:gravity="end" />
 
                     <TextView
                         android:paddingTop="10dp"
@@ -73,7 +73,7 @@
                         android:layout_height="wrap_content"
                         android:text="Judul"
                         android:textSize="20sp"
-                        android:gravity="left"
+                        android:gravity="start"
                         android:textStyle="bold"
                         android:textAllCaps="true"
                         android:textColor="#140011" />
