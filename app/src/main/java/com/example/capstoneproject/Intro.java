@@ -20,7 +20,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class intro extends AppCompatActivity {
+public class Intro extends AppCompatActivity {
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
@@ -62,7 +62,7 @@ public class intro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity( new Intent( getApplicationContext(), homeidx.class ) );
+                startActivity( new Intent( getApplicationContext(), HomeIdx.class ) );
             }
         } );
 
@@ -76,7 +76,7 @@ public class intro extends AppCompatActivity {
                     // move to next screen
                     viewPager.setCurrentItem( current );
                 } else {
-                    startActivity( new Intent( getApplicationContext(), homeidx.class ) );
+                    startActivity( new Intent( getApplicationContext(), HomeIdx.class ) );
                 }
             }
         } );
