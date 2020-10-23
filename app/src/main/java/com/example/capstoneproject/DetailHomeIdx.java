@@ -2,7 +2,6 @@ package com.example.capstoneproject;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -42,7 +41,7 @@ public class DetailHomeIdx extends AppCompatActivity {
         tvJudul.setText( judul );
         tvDeskripsi.setText( deskripsi );
         tvTgl.setText( tgl );
-        tvSumber.setText( "Lihat Lebih Lengkap" );
+        tvSumber.setText( R.string.txt_sumber );
         tvPenulis.setText( penulis );
     }
 

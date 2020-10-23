@@ -1,5 +1,7 @@
 package com.example.capstoneproject;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -9,7 +11,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,20 +21,20 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class Intro extends AppCompatActivity {
     private ViewPager viewPager;
-    private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
-    private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext;
-    private PreferenceManager prefManager;
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_intro );
-        getSupportActionBar().hide();
+        Objects.requireNonNull( getSupportActionBar() ).hide();
 
         viewPager = (ViewPager) findViewById( R.id.view_pager );
         dotsLayout = (LinearLayout) findViewById( R.id.layoutDots );
@@ -54,7 +55,7 @@ public class Intro extends AppCompatActivity {
         // making notification bar transparent
         changeStatusBarColor();
 
-        myViewPagerAdapter = new MyViewPagerAdapter();
+        MyViewPagerAdapter myViewPagerAdapter = new MyViewPagerAdapter();
         viewPager.setAdapter( myViewPagerAdapter );
         viewPager.addOnPageChangeListener( viewPagerPageChangeListener );
 
@@ -71,7 +72,7 @@ public class Intro extends AppCompatActivity {
             public void onClick(View v) {
                 // checking for last page
                 // if last page home screen will be launched
-                int current = getItem( +1 );
+                int current = getItem();
                 if (current < layouts.length) {
                     // move to next screen
                     viewPager.setCurrentItem( current );
@@ -83,7 +84,7 @@ public class Intro extends AppCompatActivity {
     }
 
     private void addBottomDots(int currentPage) {
-        dots = new TextView[layouts.length];
+        TextView[] dots = new TextView[layouts.length];
 
         int[] colorsActive = getResources().getIntArray( R.array.array_dot_active );
         int[] colorsInactive = getResources().getIntArray( R.array.array_dot_inactive );
@@ -101,8 +102,8 @@ public class Intro extends AppCompatActivity {
             dots[currentPage].setTextColor( colorsActive[currentPage] );
     }
 
-    private int getItem(int i) {
-        return viewPager.getCurrentItem() + i;
+    private int getItem() {
+        return viewPager.getCurrentItem() + 1;
     }
 
 //    private void launchHomeScreen() {
@@ -154,14 +155,14 @@ public class Intro extends AppCompatActivity {
      * View pager adapter
      */
     public class MyViewPagerAdapter extends PagerAdapter {
-        private LayoutInflater layoutInflater;
 
         public MyViewPagerAdapter() {
         }
 
+        @NonNull
         @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            layoutInflater = (LayoutInflater) getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+        public Object instantiateItem(@NonNull ViewGroup container, int position) {
+            LayoutInflater layoutInflater = (LayoutInflater) getSystemService( Context.LAYOUT_INFLATER_SERVICE );
 
             View view = layoutInflater.inflate( layouts[position], container, false );
             container.addView( view );
@@ -175,12 +176,12 @@ public class Intro extends AppCompatActivity {
         }
 
         @Override
-        public boolean isViewFromObject(View view, Object obj) {
+        public boolean isViewFromObject(@NonNull View view, @NonNull Object obj) {
             return view == obj;
         }
 
         @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
+        public void destroyItem(ViewGroup container, int position, @NonNull Object object) {
             View view = (View) object;
             container.removeView( view );
         }

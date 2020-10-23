@@ -28,7 +28,9 @@
                     android:layout_width="88dp"
                     android:layout_height="88dp"
                     android:layout_marginRight="8dp"
-                    android:scaleType="fitCenter" />
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/app_name"
+                    android:layout_marginEnd="8dp" />
 
                 <TextView
                     android:id="@+id/judul"
@@ -40,17 +42,19 @@
                     android:textSize="14sp"
                     android:layout_marginBottom="10dp"
                     android:textColor="#2d2d2d"
-                    android:layout_toRightOf="@id/gambar" />
+                    android:layout_toRightOf="@id/gambar"
+                    android:layout_toEndOf="@id/gambar" />
 
                 <TextView
                     android:id="@+id/tgl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="24 Januari 2018"
+                    android:text="@string/stxt_tgl"
                     android:textStyle="italic"
                     android:textSize="12sp"
                     android:layout_toRightOf="@id/gambar"
-                    android:layout_below="@+id/judul" />
+                    android:layout_below="@+id/judul"
+                    android:layout_toEndOf="@id/gambar" />
             </RelativeLayout>
 
             <TextView
@@ -58,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:gravity="right"
+                android:gravity="end"
                 android:text="Nama Penulus"
                 android:textColor="#4e4e4e"
                 android:textStyle="bold"
