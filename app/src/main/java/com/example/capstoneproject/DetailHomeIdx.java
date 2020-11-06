@@ -43,10 +43,20 @@ public class DetailHomeIdx extends AppCompatActivity {
         tvTgl.setText( tgl );
         tvSumber.setText( R.string.txt_sumber );
         tvPenulis.setText( penulis );
+
+        if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled( true );
     }
 
     public void sumber(View view) {
         startActivity( new Intent( Intent.ACTION_VIEW, Uri.parse( sumber ) ) );
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        Intent intent = new Intent( DetailHomeIdx.this, HomeIdx.class );
+        startActivity( intent );
+        overridePendingTransition( R.anim.fade_in, R.anim.fade_out );
+        return true;
     }
 
     @Override
