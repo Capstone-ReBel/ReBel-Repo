@@ -9,4 +9,19 @@
     <string name="txt_sumber">Lihat Lebih Lengkap</string>
     <string name="txt_authorunkwn">Penulis Tidak Diketahui</string>
     <string name="stxt_tgl">24 Januari 2018</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_home_idx">HomeIdx</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="business">Business</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="health">Health</string>
+    <string name="science">Science</string>
+    <string name="sports">Sports</string>
+    <string name="technology">Technology</string>
+
 </resources>
