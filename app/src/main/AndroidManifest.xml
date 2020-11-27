@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.capstoneproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +15,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".Alarm.AlarmActivity" />
+
+        <receiver
+            android:name=".Alarm.Alarm"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedReceiver" />
+
+        <activity
+            android:name=".SplashScA"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HomeIdx"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DetailHomeIdx" />
         <activity android:name=".Kategori.Technology" />
         <activity android:name=".Kategori.Science" />
@@ -20,21 +43,6 @@
         <activity android:name=".Kategori.Entertainment" />
         <activity android:name=".Kategori.Health" />
         <activity android:name=".Kategori.Business" />
-        <activity
-            android:name=".HomeIdx"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Intro" />
-        <activity android:name=".slider3" />
-        <activity android:name=".slider2" />
-        <activity android:name=".slider1" />
-        <activity android:name=".AfterSplashScA" />
-        <activity android:name=".SplashScA">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

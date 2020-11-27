@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.capstoneproject.API.ApiService;
 import com.example.capstoneproject.API.Server;
 import com.example.capstoneproject.Adapter.NewsAdapter;
+import com.example.capstoneproject.Alarm.AlarmActivity;
 import com.example.capstoneproject.Entity.News;
 import com.example.capstoneproject.Entity.ResponseNews;
 import com.example.capstoneproject.Kategori.Business;
@@ -179,6 +180,10 @@ public class HomeIdx extends AppCompatActivity
             overridePendingTransition( R.anim.fade_in, R.anim.fade_out );
         } else if (id == R.id.technology) {
             Intent tech = new Intent( HomeIdx.this, Technology.class );
+            startActivity( tech );
+            overridePendingTransition( R.anim.fade_in, R.anim.fade_out );
+        } else if (id == R.id.notification) {
+            Intent tech = new Intent( HomeIdx.this, AlarmActivity.class );
             startActivity( tech );
             overridePendingTransition( R.anim.fade_in, R.anim.fade_out );
         }
