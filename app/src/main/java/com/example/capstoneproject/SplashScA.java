@@ -24,9 +24,14 @@ public class SplashScA extends AppCompatActivity {
         new Handler( Looper.getMainLooper() ).postDelayed( new Runnable() {
             @Override
             public void run() {
-                Intent Intent = new Intent( SplashScA.this, AfterSplashScA.class );
+                Intent Intent = new Intent( SplashScA.this, HomeIdx.class );
                 startActivity( Intent );
+                finish();
             }
+
         }, 4000 );
+
     }
+
 }
+
