@@ -18,7 +18,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="business">Business</string>
-    <string name="entertainment">Entertainments</string>
+    <string name="entertainment">Entertainment</string>
     <string name="health">Healths</string>
     <string name="science">Sciences</string>
     <string name="sports">Sports</string>
@@ -31,7 +31,7 @@
 
     <string name="SUAOn">Notification Alarm On!</string>
     <string name="SUAOff">Notification Alarm Off!</string>
-    <string name="category">Categories</string>
+    <string name="category">Category</string>
     <string name="settings">Settings</string>
     <string name="notification">Notification</string>
     <string name="daily_reminder">Daily Reminder</string>
